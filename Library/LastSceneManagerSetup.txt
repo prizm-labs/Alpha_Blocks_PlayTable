@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Bat.unity
+- path: Assets/pig_scene.unity
   isLoaded: 1
   isActive: 1

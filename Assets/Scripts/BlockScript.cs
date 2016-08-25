@@ -34,7 +34,11 @@ public class BlockScript : MonoBehaviour {
 			touchingSnapZone = true;
 			InvisibleCollider_Holder.Instance.letter_in_frame_counter++;
 			if (InvisibleCollider_Holder.Instance.letter_in_frame_counter >= 3) {
-				InvisibleCollider_Holder.Instance.CAT.GetComponent<Animator> ().enabled = true;
+				if (InvisibleCollider_Holder.Instance.CAT.GetComponent<ParticleSystem> () == null) {
+					InvisibleCollider_Holder.Instance.CAT.GetComponent<Animator> ().enabled = true;
+				} else {
+					InvisibleCollider_Holder.Instance.CAT.GetComponent<ParticleSystem> ().Play ();
+				}
 			}
 		}
 	}
